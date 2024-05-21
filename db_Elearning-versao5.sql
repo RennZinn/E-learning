@@ -1,7 +1,8 @@
 create database DB_Elearning;
 use DB_Elearning;
 
-CREATE table CadastroUsuarios(
+create table CadastroUsuarios(
+codigo int primary key auto_increment,
 cpf varchar(14) not null,
 nome varchar(50)not null,
 email varchar(40) not null,
@@ -13,31 +14,46 @@ senha varchar(15) not null
 
 select * from CadastroUsuarios;
 
-alter table CadastroMaterial
-(
-nome varchar(30) not null,
-genero varchar(30) not null,
-autor varchar (30) not null
+ALTER TABLE CadastroMaterial
+
+create table CadastroMaterial(
+codigo int primary key auto_increment,
+nome varchar(80) not null,
+genero varchar(40) not null,
+autor varchar (60) not null
 );
 DELETE FROM CadastroMaterial;
 
 select * from CadastroMaterial;
 delete a from Cadastromaterial;
-INSERT INTO CadastroMaterial (nome, genero, autor) 
-VALUES 
-('Dom Quixote', 'Romance', 'Miguel de Cervantes'),
-('Orgulho e Preconceito', 'Romance', 'Jane Austen'),
-('1984', 'Ficção Científica', 'George Orwell'),
-('Cem Anos de Solidão', 'Realismo Mágico', 'Gabriel García Márquez'),
-('O Apanhador no Campo de Centeio', 'Romance', 'J.D. Salinger'),
-('A Revolução dos Bichos', 'Ficção Política', 'George Orwell'),
-('O Senhor dos Anéis', 'Fantasia', 'J.R.R. Tolkien'),
-('O Pequeno Príncipe', 'Fábula', 'Antoine de Saint-Exupéry'),
-('Crime e Castigo', 'Romance Psicológico', 'Fiódor Dostoiévski'),
-('A Sangue Frio', 'Não-ficção', 'Truman Capote');
+INSERT INTO CadastroMaterial (nome, genero, autor) VALUES
+('Introdução à Economia', 'Economia', 'N. Gregory Mankiw'),
+('Biologia: Uma Abordagem Molecular e Celular', 'Biologia', 'Bruce Alberts'),
+('Cálculo: Volume 1', 'Matemática', 'James Stewart'),
+('Princípios de Química: Questionando a Vida Moderna e o Meio Ambiente', 'Química', 'Peter Atkins'),
+('Psicologia Geral', 'Psicologia', 'David G. Myers'),
+('Fundamentos da Física', 'Física', 'David Halliday e Robert Resnick'),
+('História do Brasil', 'História', 'Boris Fausto'),
+('Sociologia Geral e do Direito', 'Sociologia', 'Rosângela Lunardelli Cavallazzi'),
+('Introdução à Administração', 'Administração', 'Antonio Cesar Amaru Maximiano'),
+('Estatística Básica', 'Estatística', 'Wilton de Oliveira Bussab e Pedro Alberto Morettin'),
+('Filosofia: Questões e Diálogos', 'Filosofia', 'Paulo Ghiraldelli Jr.'),
+('Linguagem C: Completa e Descomplicada', 'Programação', 'André Backes'),
+('Contabilidade Básica', 'Contabilidade', 'José Carlos Marion'),
+('Direito Constitucional', 'Direito', 'Pedro Lenza'),
+('Introdução à Lógica Matemática', 'Matemática', 'A. C. Costa'),
+('Geografia Geral e do Brasil', 'Geografia', 'Eustáquio de Sene'),
+('Fisiologia Médica', 'Medicina', 'Arthur C. Guyton e John E. Hall'),
+('Administração de Marketing', 'Marketing', 'Philip Kotler'),
+('Didática: Teoria e Prática', 'Educação', 'José Carlos Libâneo'),
+('Microeconomia', 'Economia', 'Hal R. Varian'),
+('Eletromagnetismo', 'Física', 'David J. Griffiths');
+
+
 
 select * from AULA;
-Create Table Aula(
+create Table Aula(
+codigo int primary key auto_increment,
 nomeProf varchar(30),
 Materia varchar(20),
 Conteudo varchar(40),
